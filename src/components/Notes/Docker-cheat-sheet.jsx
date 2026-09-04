@@ -102,13 +102,13 @@ export default function DockerCheatSheet() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-6 py-12 text-white">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 px-6 py-12 text-white">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
 
         <div className="mb-12 text-center">
-          <h1 className="mb-3 text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="mb-3 text-5xl font-extrabold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             🐳 Docker & Compose Cheat Sheet
           </h1>
 
