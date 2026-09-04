@@ -13,7 +13,7 @@ import JSCheatSheet from "./components/Notes";
 import Navbar from "./components/Navbar";
 import { Practice } from "./components/Practice";
 import InterviewPlaybook from "./components/Notes/Interviewquestions";
-import DockerCheatSheet from "./components/Notes/docker-cheat-sheet";
+import DockerCheatSheet from "./components/Notes/Docker-cheat-sheet";
 import FloatingButton from "./components/Floaating";
 
 function App() {
