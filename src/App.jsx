@@ -13,6 +13,8 @@ import JSCheatSheet from "./components/Notes";
 import Navbar from "./components/Navbar";
 import { Practice } from "./components/Practice";
 import InterviewPlaybook from "./components/Notes/Interviewquestions";
+import DockerCheatSheet from "./components/Notes/docker-cheat-sheet";
+import FloatingButton from "./components/Floaating";
 
 function App() {
   const [test, setTest] = useState(false);
@@ -20,6 +22,7 @@ function App() {
 
   const subjectObj = {
     javascript: <JSCheatSheet />,
+    Docker: <DockerCheatSheet />,
     interview: <InterviewPlaybook />,
   };
 
@@ -38,6 +41,11 @@ function App() {
           <>
             <p>Test components</p>
             <Practice />
+            <div className="min-h-screen bg-gray-100">
+              <FloatingButton
+                onClick={() => alert("Floating Button Clicked")}
+              />
+            </div>
             {/* <Pagination/> */}
             {/* <Dictionary /> */}
             {/* <UnoptimizedApp /> */}

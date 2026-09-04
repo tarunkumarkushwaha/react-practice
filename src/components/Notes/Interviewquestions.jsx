@@ -48,9 +48,9 @@ export default function PlaybookDashboard() {
         
         {/* Sidebar Nav Tree Container */}
         <aside className="lg:col-span-4 flex flex-col gap-3">
-          <h3 className="text-xs font-bold tracking-widest text-slate-500 uppercase px-2 font-mono">
+          {/* <h3 className="text-xs font-bold tracking-widest text-slate-500 uppercase px-2 font-mono">
             Navigation Index
-          </h3>
+          </h3> */}
           <div className="space-y-2.5">
             {AppCategories.map((category) => {
               const isActive = category.id === selectedCategory;
@@ -88,15 +88,15 @@ export default function PlaybookDashboard() {
         </aside>
 
         {/* Dynamic Focus Desk Workspace */}
-        <main className="lg:col-span-8 bg-slate-950/40 border border-slate-900/80 rounded-2xl p-6 flex flex-col shadow-inner">
+        <main className="lg:col-span-8 bg-slate-950/40 border border-slate-900/80 rounded-2xl p-2 flex flex-col shadow-inner">
           
           {/* Active Category Meta Headers */}
-          <div className="border-b border-slate-800 pb-5 mb-6">
-            <span className="text-xs font-mono text-teal-400 bg-teal-950/40 px-2.5 py-1 rounded-md border border-teal-900/50 uppercase tracking-wider">
+          <div className="border-b border-slate-800 pb-4 mb-6">
+            {/* <span className="text-xs font-mono text-teal-400 bg-teal-950/40 px-2.5 py-1 rounded-md border border-teal-900/50 uppercase tracking-wider">
               Selected Scope
-            </span>
-            <h2 className="text-2xl font-bold text-slate-100 mt-3">{activeCategory.title}</h2>
-            <p className="text-sm text-slate-400 mt-1 leading-relaxed">{activeCategory.description}</p>
+            </span> */}
+            {/* <h2 className="text-2xl font-bold text-slate-100 mt-3">{activeCategory.title}</h2>
+            <p className="text-sm text-slate-400 mt-1 leading-relaxed">{activeCategory.description}</p> */}
             
             {/* Realtime Search Query Filtering Element */}
             <div className="mt-5 relative">

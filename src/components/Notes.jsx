@@ -248,6 +248,81 @@ document.getElementById('parent-ul').addEventListener('click', function(event) {
   }
 });`,
   },
+  {
+    id: "function-declarations",
+    title: "17. Function Declarations",
+    definition:
+      "A function declaration defines a named standalone function using the function keyword. The JavaScript engine parses declarations during the compile phase before any code is executed.",
+    reactConnection:
+      "Commonly used to define standalone functional components or major helper utilities outside the component lifecycle. Because they are fully hoisted, their physical placement at the bottom of a file won't disrupt component readability.",
+    code: `// Valid because of hoisting
+sayHello(); 
+
+function sayHello() {
+  console.log("Hello there!");
+}`,
+  },
+  {
+    id: "function-expressions",
+    title: "18. Function Expressions",
+    definition:
+      "A function expression creates a function (often anonymous) and assigns it directly to a variable or an object property. It is evaluated only when execution reaches its line of code.",
+    reactConnection:
+      "Essential for defining internal inline handlers, sub-routines, or memos within React components (e.g., const handleClose = () => {}). Crucial when optimization hooks like useCallback require storing a function instance inside a variable block.",
+    code: `// Throws a ReferenceError: sayHello is not defined
+try {
+  sayHello(); 
+} catch (e) {
+  console.log(e.message);
+}
+
+const sayHello = function() {
+  console.log("Hello there!");
+};
+
+sayHello(); // Valid here`,
+  },
+  {
+    id: "rest-parameters",
+    title: "19. Rest Parameters (...)",
+    definition:
+      "The rest parameter gathers a dynamic, comma-separated list of individual arguments into a single, true JavaScript array. It must always occupy the final position in a parameter or destructuring list.",
+    reactConnection:
+      "Frequently used in higher-order components (HOCs) or custom wrapper components to capture any extra arbitrary props using rest destructuring, allowing you to intercept custom logic before forwarding the remaining items down.",
+    code: `// Gathers inputs into a single array
+function sumEverything(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sumEverything(1, 2, 3, 4)); // 10
+
+// Rest with Destructuring
+const [firstItem, secondItem, ...theRest] = ['Apple', 'Banana', 'Orange', 'Grape'];
+console.log(firstItem); // "Apple"
+console.log(theRest);   // ["Orange", "Grape"]`,
+  },
+  {
+    id: "spread-operator",
+    title: "20. Spread Operator (...)",
+    definition:
+      "The spread operator expands, unpacks, or spreads the individual pieces of an iterable box (like an array or object) into separate values, elements, or key-value pairs.",
+    reactConnection:
+      "The fundamental way to maintain state immutability in React. Used to unpack existing state objects or arrays into brand-new reference pointers during updates (e.g., s => ({...s, status: 'Active'})), triggering clean re-renders.",
+    code: `// Spreading in Function Calls
+const temperatures = [72, 85, 64, 91];
+console.log(Math.max(...temperatures)); // 91
+
+// Merging and Shallow Copying Arrays
+const fruits = ['Apple', 'Banana'];
+const veggies = ['Carrot', 'Potato'];
+const groceries = [...fruits, ...veggies, 'Milk']; 
+// ['Apple', 'Banana', 'Carrot', 'Potato', 'Milk']
+
+// Merging Objects (Right overwrites Left matches)
+const user = { name: 'Alex', role: 'Guest' };
+const updates = { role: 'Admin', status: 'Active' };
+const updatedUser = { ...user, ...updates }; 
+// { name: 'Alex', role: 'Admin', status: 'Active' }`,
+  },
 ];
 
 export default function JSCheatSheet() {
